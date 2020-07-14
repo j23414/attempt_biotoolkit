@@ -31,3 +31,23 @@ source blobworld/bin/activate
 pip install -r blobtoolkit/requirements.txt
 ```
 
+Actually this seems to require multiple git repos... 
+
+<details><summary>Expand to see the 4 repos</summary>
+
+```
+git clone https://github.com/blobtoolkit/blobtools2;
+git clone https://github.com/blobtoolkit/viewer;
+git clone https://github.com/blobtoolkit/specification;
+git clone https://github.com/blobtoolkit/insdc-pipeline;
+```
+
+</details>
+
+is there a reason why they're not using [git submodules](https://www.vogella.com/tutorials/GitSubmodules/article.html)?
+
+```
+git clone --recursive main_git_repo_that_points_to_several_others.git 
+```
+
+Fetching other repos went fine, but then fetching NCBI `nt` was too large, my laptop ran out of space...it needs the entire `nt`? Why not focus on a particular species or do remote blast?

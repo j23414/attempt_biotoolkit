@@ -53,11 +53,13 @@ git clone --recursive main_git_repo_that_points_to_several_others.git
 
 Fetching other repos went fine, but then fetching NCBI `nt` was too large, my laptop ran out of space...it needs the entire `nt`? Why not focus on a particular species or do remote blast?
 
+Okay - so turns out pulling all of NCBI nt is not necessary. Continuing with rediculously minimal example
+
 </details>
 
 <details><summary>Minimal Example - in progress</summary>
 
-Okay - so pulling all of nt is not necessary. Continuing with rediculously minimal example
+Created a really small assembly file.
 
 **assembly.fasta**
 
@@ -98,3 +100,8 @@ You may need to link some metadata... including mapping to an assembly...need a 
 Then open `http://localhost:8080` in browser.
 
 </details>
+
+What it looks like currently -- need to add blast/more metadata
+
+<img src="imgs/blobtools_viewer.png" />
+

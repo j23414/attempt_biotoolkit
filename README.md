@@ -16,6 +16,7 @@ According to [BlobToolKit documentation](https://blobtoolkit.genomehubs.org/inst
 * [Install Firefox](https://www.mozilla.org/en-US/firefox/new/)
 * [Install X11](https://kb.thayer.dartmouth.edu/article/336-x11-for-windows-and-mac)
 
+<details><summary>Install blobtools on MacOS - seems to be working</summary>
 
 ```
 git clone https://github.com/blobtoolkit/blobtools2.git
@@ -52,6 +53,10 @@ git clone --recursive main_git_repo_that_points_to_several_others.git
 
 Fetching other repos went fine, but then fetching NCBI `nt` was too large, my laptop ran out of space...it needs the entire `nt`? Why not focus on a particular species or do remote blast?
 
+</details>
+
+<details><summary>Minimal Example - in progress</summary>
+
 Okay - so pulling all of nt is not necessary. Continuing with rediculously minimal example
 
 **assembly.fasta**
@@ -80,3 +85,16 @@ ls -ltr testassembly/
 #> -rw-r--r--  1 jenchang  staff    49B Jul 20 11:01 ncount.json
 #> -rw-r--r--  1 jenchang  staff   883B Jul 20 11:01 meta.json
 ```
+
+You may need to link some metadata... including mapping to an assembly...need a different minimal example.
+
+```
+./blobtools2/blobtools host `pwd`
+#> Starting BlobToolKit API on port 8000 (pid: 85432)
+#> Starting BlobToolKit viewer on port 8080 (pid: 85434)
+#> Visit http://localhost:8080 to use the interactive BlobToolKit Viewer.
+```
+
+Then open `http://localhost:8080` in browser.
+
+</details>

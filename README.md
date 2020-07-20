@@ -51,3 +51,32 @@ git clone --recursive main_git_repo_that_points_to_several_others.git
 ```
 
 Fetching other repos went fine, but then fetching NCBI `nt` was too large, my laptop ran out of space...it needs the entire `nt`? Why not focus on a particular species or do remote blast?
+
+Okay - so pulling all of nt is not necessary. Continuing with rediculously minimal example
+
+**assembly.fasta**
+
+```
+>One
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+>Two
+AAAAAAAAAAAAAAACCCCCCCCCCCCCCCCCC
+>Three
+AAAAAAAACCCCCCCCCCCCCCCCCCGGGGGGG
+```
+
+Based on [this documentation](https://blobtoolkit.genomehubs.org/blobtools2/blobtools2-tutorials/getting-started-with-blobtools2/#create_blobdir), in bash we can create a folder
+
+```
+./blobtools2/blobtools create --fasta assembly.fasta testassembly
+#> Loading sequences from assembly.fasta
+#> - processing Three: : 3it [00:00, 532.00it/s]
+
+ls -ltr testassembly/
+#> total 40
+#> -rw-r--r--  1 jenchang  staff    63B Jul 20 11:01 identifiers.json
+#> -rw-r--r--  1 jenchang  staff    61B Jul 20 11:01 gc.json
+#> -rw-r--r--  1 jenchang  staff    52B Jul 20 11:01 length.json
+#> -rw-r--r--  1 jenchang  staff    49B Jul 20 11:01 ncount.json
+#> -rw-r--r--  1 jenchang  staff   883B Jul 20 11:01 meta.json
+```
